@@ -1,0 +1,17 @@
+@import "../../style/setup/setup.scss";
+
+.loading {
+  // height: 100%;
+  // width: 100%;
+  min-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-weight: 600;
+    margin-top: 30px;
+  }
+}
