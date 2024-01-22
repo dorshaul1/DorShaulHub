@@ -1,0 +1,22 @@
+@import "../../style/setup/setup.scss";
+
+.blog {
+  $page-padding: 0 25%;
+  padding: $page-padding;
+  padding-block: 80px;
+  min-height: 80vh;
+
+  .title {
+    font-size: 50px;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: $large-breakpoint) {
+    padding: $page-padding-large;
+    padding-block: 80px;
+  }
+  @media screen and (max-width: $normal-breakpoint) {
+    padding: $page-padding-normal;
+    padding-block: 80px;
+  }
+}

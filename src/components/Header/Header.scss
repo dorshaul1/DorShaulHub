@@ -1,0 +1,37 @@
+@import "../../style/setup/setup.scss";
+
+.header {
+  padding: 20px 40px 0 40px;
+  @include themify($themes) {
+    background: themed("headerFooterBackground");
+  }
+  .header-content {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      img {
+        width: 40px;
+      }
+    }
+    .navigations {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+
+      .nav-item {
+        text-transform: uppercase;
+        color: $clr-gray;
+        font-size: 16px;
+        font-weight: 300;
+
+        &.active {
+          color: $clr-black;
+        }
+      }
+    }
+  }
+}

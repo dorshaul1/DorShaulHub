@@ -1,0 +1,13 @@
+@import "./setup/setup.scss";
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  color: $clr-black;
+}

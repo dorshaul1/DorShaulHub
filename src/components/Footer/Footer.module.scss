@@ -1,0 +1,19 @@
+@import "../../style/setup/setup.scss";
+
+.footer {
+  width: 100%;
+  min-height: 200px;
+  background-color: $clr-gray-light;
+
+  .wrapper {
+    padding: $page-padding;
+    padding-block: 50px;
+    display: flex;
+    justify-content: center;
+    .socials {
+      width: 400px;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+}

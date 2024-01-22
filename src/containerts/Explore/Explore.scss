@@ -1,0 +1,16 @@
+@import "../../style/setup/setup.scss";
+
+.explore {
+  padding: $page-padding;
+  min-height: 80vh;
+  padding-block: 30px;
+
+  @media screen and (max-width: $large-breakpoint) {
+    padding: $page-padding-large;
+    padding-block: 30px;
+  }
+  @media screen and (max-width: $normal-breakpoint) {
+    padding: $page-padding-normal;
+    padding-block: 30px;
+  }
+}

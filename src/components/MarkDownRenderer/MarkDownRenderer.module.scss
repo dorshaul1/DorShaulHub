@@ -1,0 +1,30 @@
+@import "../../style/setup/setup.scss";
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-block: 30px;
+  cursor: default;
+  .imageWrapper {
+    border-radius: 3px;
+    background-color: $clr-gray-light;
+    padding: 5px;
+    img {
+      width: 400px;
+      border-radius: 3px;
+
+      @media screen and (max-width: $mobile-breakpoint) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.highlight {
+  color: $clr-primary;
+  background-color: $clr-primary-opacity;
+  padding: 0 6px;
+  margin: 0 5px;
+  border-radius: 5px;
+}

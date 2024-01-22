@@ -1,0 +1,26 @@
+@import "../../style/setup/setup.scss";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  margin-bottom: 50px;
+
+  .title {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    color: $clr-gray-medium;
+    font-weight: 400;
+    margin-bottom: 50px;
+  }
+
+  .date {
+    color: $clr-gray-medium;
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+}

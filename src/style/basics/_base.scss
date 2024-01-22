@@ -1,0 +1,32 @@
+@import "../setup/setup.scss";
+
+body {
+  color: $clr-black;
+  margin: 0;
+  font-size: rem(16px);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: rem(20px);
+  font-weight: 700;
+}
+
+p {
+  // margin: 0 0 1rem;
+}
+
+button,
+a {
+  cursor: pointer;
+}

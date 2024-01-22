@@ -1,0 +1,12 @@
+@import "../../style/setup/setup.scss";
+
+.filters {
+  display: flex;
+  padding-block: 30px;
+
+  gap: 30px;
+
+  .labels {
+    user-select: none;
+  }
+}

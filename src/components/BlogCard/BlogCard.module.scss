@@ -1,0 +1,91 @@
+@import "../../style/setup/setup.scss";
+
+.blogCard {
+  max-width: 270px;
+  height: 370px;
+  position: relative;
+  transition: transform 0.2s ease;
+  // color: $clr-black;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  .imgSection {
+    width: 100%;
+    height: 165px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+  }
+
+  .labelsSection {
+    margin-bottom: 13px;
+    color: $clr-primary;
+    .label {
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+
+  .content {
+    max-height: 165px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $clr-black;
+    position: relative;
+
+    .title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 17px;
+    }
+
+    .description {
+      color: $clr-gray;
+      font-size: 13px;
+      font-weight: 500;
+      overflow: hidden;
+    }
+
+    .gradiant {
+      position: absolute;
+      bottom: 0;
+      height: 15px;
+      width: 100%;
+      background: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 0)
+      );
+    }
+  }
+  .cardFooter {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    // height: 50px;
+
+    .footerContent {
+      position: absolute;
+      bottom: 0;
+      .date {
+        color: $clr-gray;
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+
+    // box-shadow: inset 0px 10px 10px 10px red;
+    // background: linear-gradient(
+    //   to top,
+    //   rgba(255, 255, 255, 1),
+    //   rgba(255, 255, 255, 0)
+    // );
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    max-width: 100%;
+  }
+}

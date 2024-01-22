@@ -1,0 +1,22 @@
+@import "../../style/setup/setup.scss";
+
+.input {
+  // background-color: $clr-gray-light;
+
+  // border-radius: 20px;
+
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: $clr-black;
+  border-bottom: 1px solid $clr-primary;
+
+  &::placeholder {
+    color: $clr-gray;
+  }
+
+  &.input-with-icon {
+    margin-left: 10px;
+  }
+}

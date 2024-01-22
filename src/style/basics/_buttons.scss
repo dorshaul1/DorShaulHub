@@ -1,0 +1,25 @@
+@import "../setup/setup.scss";
+
+button {
+  // $darken-amount: 25;
+  // border-radius: 5px;
+  border: 3px solid transparent;
+  background-color: transparent;
+
+  outline: 0;
+  // background-color: $clr-light -blue;
+  // color: set-color($clr-light-blue, 55);
+  // padding-block: 5px;
+
+  // $categories: border, border-color, background-color;
+  // $transition-string: getTransition(linear, 0.25s, $categories);
+  // transition: $transition-string;
+
+  // &:active {
+  //   border: 3px solid transparent;
+
+  //   $color: darken($clr-light-blue, $darken-amount);
+  //   background-color: $color;
+  //   color: set-color($color, 55);
+  // }
+}

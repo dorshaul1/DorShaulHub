@@ -1,0 +1,12 @@
+@import "../../style/setup/setup.scss";
+
+.search-bar {
+  width: 300px;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+
+  .search-icon {
+    margin-right: 15px;
+  }
+}
