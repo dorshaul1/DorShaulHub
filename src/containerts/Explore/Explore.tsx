@@ -1,13 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAtom, useAtomValue } from "jotai";
 import { blogsAtoms } from "../../state/blogsAtom/blogsAtoms";
 import { getBlogs } from "../../services/blogsService";
 import SearchBar from "../../components/SearchBar";
-import styles from "./Explore.module.scss";
+import "./Explore.scss";
 import BlogList from "../../components/BlogList";
 import Filters from "../../components/Filters";
 import { useFilter } from "../../components/Filters/useFilter";
-import Loading from "../../components/Loading";
 
 const Explore = () => {
   const [blogs, setBlogs] = useAtom(blogsAtoms.blogs);
@@ -15,17 +14,8 @@ const Explore = () => {
 
   const { updateFilter } = useFilter();
 
-  const [loading, setLoading] = useState(true);
-
   const fetchBlogs = async () => {
-    try {
-      setLoading(true);
-      setBlogs(await getBlogs(currentFilters));
-    } catch (error) {
-      console.error("Failed to fetch blogs", error);
-    } finally {
-      setLoading(false);
-    }
+    setBlogs(await getBlogs(currentFilters));
   };
 
   useEffect(() => {
@@ -33,13 +23,13 @@ const Explore = () => {
   }, [currentFilters]);
 
   return (
-    <section className={styles.explore}>
+    <section className="explore">
       <SearchBar
         search={currentFilters?.search}
         onSubmit={(value) => updateFilter("search", value)}
       />
       <Filters filters={currentFilters} />
-      {loading ? <Loading /> : <BlogList blogs={blogs} />}
+      <BlogList blogs={blogs} />
     </section>
   );
 };

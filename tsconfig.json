@@ -6,7 +6,6 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "typeRoots": ["./src", "./node_modules/@types"],
-    "suppressImplicitAnyIndexErrors": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -22,7 +21,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src","types/global.d.ts", "types", "src/**/*", "types/global.d.ts", "types/**/*"],
-  "exclude": ["src/assets"],
+  "include": ["src","types/global.d.ts", "types"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -4,23 +4,15 @@ import { getBlogById } from "../../services/blogsService";
 import { useEffect, useState } from "react";
 import BlogHeader from "../BlogHeader";
 import BlogBody from "../BlogBody";
-import Loading from "../../components/Loading";
 
 const Blog = () => {
   const { blogId } = useParams();
   const [blog, setBlog] = useState<TBlog | null>();
-  const [loading, setLoading] = useState(true);
 
   const fetchBlog = async () => {
     if (blogId) {
-      try {
-        setLoading(true);
-        setBlog(await getBlogById(blogId));
-      } catch (error) {
-        console.error("Failed to fetch blogs", error);
-      } finally {
-        setLoading(false);
-      }
+      const fetchedBlog = await getBlogById(blogId);
+      setBlog(fetchedBlog);
     }
   };
 
@@ -28,9 +20,7 @@ const Blog = () => {
     fetchBlog();
   }, [blogId]);
 
-  return loading ? (
-    <Loading />
-  ) : (
+  return (
     <section className={styles.blog}>
       <BlogHeader
         title={blog?.title}

@@ -7,5 +7,4 @@ export type TIcon =
   | "linkedin"
   | "github"
   | "instagram"
-  | "mail"
-  | "loading";
+  | "mail";
