@@ -11,7 +11,6 @@ import classNames from "classnames";
 import { useAtomValue } from "jotai";
 import { globalAtoms } from "./state/globalAtoms";
 
-import { ThemeContext } from "./contexts/themeContext";
 import { useState } from "react";
 
 function App() {
@@ -23,19 +22,17 @@ function App() {
   return (
     // <IntlProvider locale={locale} messages={messages}>
     <div className={classNames(styles.app, { ["rtl"]: locale === "he" })}>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
-        <div className={`theme-${theme}`}>
-          <Router>
-            <Header />
-            <Routes>
-              <Route path="/" element={<Navigate to="/blogs" />} />
-              <Route path="/blogs" element={<Explore />} />
-              <Route path="/blogs/:blogId" element={<Blog />} />
-            </Routes>
-          </Router>
-          <Footer />
-        </div>
-      </ThemeContext.Provider>
+      <div className={`theme-${theme}`}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Navigate to="/blogs" />} />
+            <Route path="/blogs" element={<Explore />} />
+            <Route path="/blogs/:blogId" element={<Blog />} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
     </div>
     // </IntlProvider>
   );
