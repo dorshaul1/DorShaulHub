@@ -5,6 +5,7 @@
   gap: 20px;
   align-items: center;
   height: 20px;
+  flex-wrap: wrap;
   .label {
     background-color: $clr-primary-opacity;
     color: $clr-primary;

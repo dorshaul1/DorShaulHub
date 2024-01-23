@@ -9,4 +9,8 @@
   .labels {
     user-select: none;
   }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 13px;
+  }
 }

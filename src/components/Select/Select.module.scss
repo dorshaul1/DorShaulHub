@@ -6,6 +6,9 @@
   .wrapper {
     display: flex;
     align-items: center;
+    .label {
+      min-width: 50px;
+    }
     .content {
       z-index: 100;
 
