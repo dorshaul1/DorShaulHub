@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useAtom, useAtomValue } from "jotai";
 import { blogsAtoms } from "../../state/blogsAtom/blogsAtoms";
 import { getBlogs } from "../../services/blogsService";
@@ -10,8 +10,9 @@ import { useFilter } from "../../components/Filters/useFilter";
 import Loading from "../../components/Loading";
 
 const Explore = () => {
-  const [blogs, setBlogs] = useAtom(blogsAtoms.blogs);
+  const [_, setBlogs] = useAtom(blogsAtoms.blogs);
   const currentFilters = useAtomValue(blogsAtoms.currentFilters);
+  const filteredBlogs = useAtomValue(blogsAtoms.filteredBlogs);
 
   const { updateFilter } = useFilter();
 
@@ -30,7 +31,7 @@ const Explore = () => {
 
   useEffect(() => {
     fetchBlogs();
-  }, [currentFilters]);
+  }, []);
 
   return (
     <section className={styles.explore}>
@@ -39,7 +40,7 @@ const Explore = () => {
         onSubmit={(value) => updateFilter("search", value)}
       />
       <Filters filters={currentFilters} />
-      {loading ? <Loading /> : <BlogList blogs={blogs} />}
+      {loading ? <Loading /> : <BlogList blogs={filteredBlogs} />}
     </section>
   );
 };
