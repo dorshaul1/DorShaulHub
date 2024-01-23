@@ -29,6 +29,10 @@
         font-size: 16px;
         font-weight: 300;
 
+        @media screen and (max-width: $mobile-breakpoint) {
+          font-size: 13px;
+        }
+
         &.active {
           color: $clr-black;
         }

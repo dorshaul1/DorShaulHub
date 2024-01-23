@@ -10,17 +10,29 @@
     font-size: 50px;
     font-weight: 500;
     margin-bottom: 10px;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 35px;
+    }
   }
 
   .description {
     color: $clr-gray-medium;
     font-weight: 400;
     margin-bottom: 50px;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 15px;
+    }
   }
 
   .date {
     color: $clr-gray-medium;
     font-weight: 200;
     margin-bottom: 20px;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 13px;
+    }
   }
 }

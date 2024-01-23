@@ -28,3 +28,9 @@
   margin: 0 5px;
   border-radius: 5px;
 }
+
+.codeContainer {
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 8px;
+  }
+}

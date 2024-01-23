@@ -40,6 +40,9 @@
       font-size: 20px;
       font-weight: 500;
       margin-bottom: 17px;
+      @media screen and (max-width: $mobile-breakpoint) {
+        font-size: 18px;
+      }
     }
 
     .description {
@@ -76,16 +79,13 @@
         font-weight: 300;
       }
     }
-
-    // box-shadow: inset 0px 10px 10px 10px red;
-    // background: linear-gradient(
-    //   to top,
-    //   rgba(255, 255, 255, 1),
-    //   rgba(255, 255, 255, 0)
-    // );
+    @media screen and (max-width: $mobile-breakpoint) {
+      font-size: 13px;
+    }
   }
 
   @media screen and (max-width: $mobile-breakpoint) {
     max-width: 100%;
+    font-size: 13px;
   }
 }

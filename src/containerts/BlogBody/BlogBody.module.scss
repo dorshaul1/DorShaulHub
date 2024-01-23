@@ -1,4 +1,7 @@
 @import "../../style/setup/setup.scss";
 
 .container {
+  @media screen and (max-width: $mobile-breakpoint) {
+    font-size: 12px;
+  }
 }

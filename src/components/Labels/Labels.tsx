@@ -11,7 +11,6 @@ const labels = ["react", "css", "node"];
 const Labels = ({ checkedLabels, onClick }: TProps) => {
   return (
     <div className={styles.labels}>
-      <span>Labels</span>
       {labels?.map((label: any) => (
         <span
           key={label}
