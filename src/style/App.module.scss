@@ -9,5 +9,6 @@ body {
 
 .app {
   min-height: 100vh;
-  color: $clr-black;
+  color: var(--clr-font);
+  background-color: var(--clr-background);
 }

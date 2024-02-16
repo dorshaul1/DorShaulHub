@@ -9,8 +9,8 @@
   background: transparent;
   border: 0;
   outline: none;
-  color: $clr-black;
-  border-bottom: 1px solid $clr-primary;
+  color: var(--clr-black);
+  border-bottom: 1px solid var(--clr-primary);
 
   &::placeholder {
     color: $clr-gray;

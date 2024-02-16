@@ -1,7 +1,7 @@
 @import "../setup/setup.scss";
 
 body {
-  color: $clr-black;
+  color: var(--clr-black);
   margin: 0;
   font-size: rem(16px);
   font-weight: 400;

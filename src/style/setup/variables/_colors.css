@@ -1,0 +1,27 @@
+body{
+    --clr-black: #212121;
+    --clr-white: hsl(0, 0%, 93%);
+
+    --clr-primary: #8bba99;
+    --clr-primary-opacity: #8bba992d;
+
+    --clr-gray-light: #f4f4f4;
+    --clr-gray: #aaaaaa;
+    --clr-gray-medium: #6d7385;
+    --clr-gray-dark: #13121d;
+
+    --clr-gray-hover: #f5f5f5;
+
+    --clr-light-blue: #1dbac5;
+    --clr-orange: #d14d14;
+    --clr-red: #c51d31;
+
+    --clr-positive: #58b84b;
+    --clr-negative: #c95465;
+
+
+
+    --clr-font: var(--clr-black);
+    --clr-background: var(--clr-white);
+
+}

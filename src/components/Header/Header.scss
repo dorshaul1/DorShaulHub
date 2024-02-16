@@ -34,7 +34,7 @@
         }
 
         &.active {
-          color: $clr-black;
+          color: var(--clr-black);
         }
       }
     }

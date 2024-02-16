@@ -21,7 +21,7 @@
           outline: none;
           border: 1px transparent solid;
           &.checked {
-            color: $clr-primary;
+            color: var(--clr-primary);
           }
 
           &:hover {

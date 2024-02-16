@@ -1,16 +1,16 @@
 @import "../setup/setup.scss";
 
 a {
-  color: $clr-black;
+  color: var(--clr-black);
   padding: 10px 0;
   text-decoration: none;
 
   &:hover,
   &:active {
-    color: $clr-primary; // Color on hover and active state
+    color: var(--clr-primary); // Color on hover and active state
   }
 
   &:visited {
-    color: $clr-primary; // Color for visited links
+    color: var(--clr-primary); // Color for visited links
   }
 }
