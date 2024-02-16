@@ -1,5 +1,5 @@
 import { TextField } from "@radix-ui/themes";
-import "./Input.scss";
+import styles from "./Input.module.scss";
 
 type InputProps = {
   placeholder?: string;
@@ -11,7 +11,7 @@ const Input = ({ placeholder, value, onChange }: InputProps) => {
   return (
     <TextField.Root>
       <TextField.Input
-        className="input"
+        className={styles.input}
         type="text"
         placeholder={placeholder}
         value={value}
