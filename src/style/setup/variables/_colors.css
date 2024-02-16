@@ -1,6 +1,6 @@
-body{
+:root {
     --clr-black: #212121;
-    --clr-white: hsl(0, 0%, 93%);
+    --clr-white: white;
 
     --clr-primary: #8bba99;
     --clr-primary-opacity: #8bba992d;
