@@ -8,6 +8,8 @@ import github from "../../assets/icons/github.svg";
 import instagram from "../../assets/icons/instagram.svg";
 import mail from "../../assets/icons/mail.svg";
 import loading from "../../assets/icons/loading.svg";
+import moon from "../../assets/icons/moon.svg";
+import sun from "../../assets/icons/sun.svg";
 
 export const icons: Record<string, string> = {
   arrow,
@@ -20,4 +22,6 @@ export const icons: Record<string, string> = {
   instagram,
   mail,
   loading,
+  moon,
+  sun,
 };

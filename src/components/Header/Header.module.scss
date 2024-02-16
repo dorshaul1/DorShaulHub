@@ -6,7 +6,7 @@
   @include themify($themes) {
     background: themed("headerFooterBackground");
   }
-  .header-content {
+  .headerContent {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -17,13 +17,18 @@
         width: 40px;
       }
     }
+
     .navigations {
+      .darkModeSwitch {
+        display: flex;
+        gap: 10px;
+      }
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 40px;
 
-      .nav-item {
+      .navItem {
         text-transform: uppercase;
         color: $clr-gray;
         font-size: 16px;
@@ -34,7 +39,7 @@
         }
 
         &.active {
-          color: var(--clr-black);
+          color: var(--clr-font);
         }
       }
     }

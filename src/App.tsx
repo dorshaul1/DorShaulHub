@@ -11,28 +11,23 @@ import classNames from "classnames";
 import { useAtomValue } from "jotai";
 import { globalAtoms } from "./state/globalAtoms";
 
-import { useState } from "react";
-
 function App() {
   //TODO: implement localization
   const locale = useAtomValue(globalAtoms.systemLanaguage);
   // const messages = translations[locale];
-  const [theme, setTheme] = useState("light");
 
   return (
     // <IntlProvider locale={locale} messages={messages}>
     <div className={classNames(styles.app, { ["rtl"]: locale === "he" })}>
-      <div className={`theme-${theme}`}>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Navigate to="/blogs" />} />
-            <Route path="/blogs" element={<Explore />} />
-            <Route path="/blogs/:blogId" element={<Blog />} />
-          </Routes>
-        </Router>
-        <Footer />
-      </div>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Navigate to="/blogs" />} />
+          <Route path="/blogs" element={<Explore />} />
+          <Route path="/blogs/:blogId" element={<Blog />} />
+        </Routes>
+      </Router>
+      <Footer />
     </div>
     // </IntlProvider>
   );

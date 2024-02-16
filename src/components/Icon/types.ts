@@ -8,4 +8,6 @@ export type TIcon =
   | "github"
   | "instagram"
   | "mail"
-  | "loading";
+  | "loading"
+  | "sun"
+  | "moon";

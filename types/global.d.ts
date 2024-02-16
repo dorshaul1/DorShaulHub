@@ -1,5 +1,7 @@
 type TLanguages = "eu" | "he";
 
+type TAppTheme = "light" | "dark" | null;
+
 type TLabel = "react" | "node" | "css";
 
 type TSortBy = "name" | "date";

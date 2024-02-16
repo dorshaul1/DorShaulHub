@@ -1,0 +1,24 @@
+.SwitchRoot {
+  width: 32px;
+  // height: 18px;
+  border-radius: 50px;
+  background-color: var(--clr-gray);
+}
+
+.SwitchRoot[data-state="checked"] {
+  background-color: var(--clr-primary);
+}
+
+.SwitchThumb {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--clr-gray-light);
+  border-radius: 50px;
+  transition: transform 0.1s;
+  transform: translateX(-5px);
+}
+
+.SwitchThumb[data-state="checked"] {
+  transform: translateX(8px);
+}

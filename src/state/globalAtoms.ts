@@ -1,5 +1,9 @@
 import { atom } from "jotai";
 
-const systemLanaguage = atom("eu");
+const storedTheme = localStorage.getItem("appTheme");
 
-export const globalAtoms = { systemLanaguage };
+const systemLanaguage = atom<TLanguages>("eu");
+
+const appTheme = atom<any>(storedTheme || "dark"); // TODO: set correct type
+
+export const globalAtoms = { systemLanaguage, appTheme };
