@@ -13,7 +13,7 @@
       z-index: 100;
 
       .group {
-        background-color: white;
+        background-color: var(--clr-background);
         box-shadow: 0px 8px 16px #0000001f;
         .item {
           margin-block: 5px;
@@ -25,9 +25,7 @@
           }
 
           &:hover {
-            background-color: aqua;
-
-            background-color: $clr-gray-hover;
+            background-color: var(--clr-background-secondary);
             cursor: pointer;
           }
         }

@@ -17,7 +17,7 @@ type TProps = {
 export const Icon = ({
   name,
   width = 20,
-  color = scssVariables.clrBlack,
+  color = "var(--clr-font)",
   className,
 }: TProps) => {
   return (

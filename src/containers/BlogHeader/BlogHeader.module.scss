@@ -17,7 +17,7 @@
   }
 
   .description {
-    color: $clr-gray-medium;
+    color: var(--clr-font-secondary);
     font-weight: 400;
     margin-bottom: 50px;
 
@@ -27,7 +27,7 @@
   }
 
   .date {
-    color: $clr-gray-medium;
+    color: var(--clr-font-secondary);
     font-weight: 200;
     margin-bottom: 20px;
 

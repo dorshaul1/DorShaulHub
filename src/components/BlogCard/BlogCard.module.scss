@@ -32,7 +32,7 @@
     max-height: 165px;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: var(--clr-black);
+    color: var(--clr-font);
     position: relative;
 
     .title {
@@ -45,7 +45,7 @@
     }
 
     .description {
-      color: $clr-gray;
+      color: var(--clr-font-secondary);
       font-size: 13px;
       font-weight: 500;
       overflow: hidden;
@@ -58,7 +58,7 @@
       width: 100%;
       background: linear-gradient(
         to top,
-        rgba(255, 255, 255, 1),
+        var(--clr-background),
         rgba(255, 255, 255, 0)
       );
     }

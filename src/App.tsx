@@ -1,24 +1,26 @@
+import { useEffect } from "react";
 import { HashRouter as Router, Routes, Navigate } from "react-router-dom";
 import styles from "./style/App.module.scss";
-// import { IntlProvider } from "react-intl";
-// import { translations } from "./localization";
 import Header from "./components/Header";
 import { Route } from "react-router-dom";
-import Explore from "./containerts/Explore";
+import Explore from "./containers/Explore";
+import Blog from "./containers/Blog";
 import Footer from "./components/Footer";
-import Blog from "./containerts/Blog";
-import classNames from "classnames";
 import { useAtomValue } from "jotai";
 import { globalAtoms } from "./state/globalAtoms";
 
 function App() {
-  //TODO: implement localization
-  const locale = useAtomValue(globalAtoms.systemLanaguage);
-  // const messages = translations[locale];
+  const appTheme = useAtomValue(globalAtoms.appTheme);
+
+  useEffect(() => {
+    document.body.setAttribute(
+      "data-theme",
+      appTheme === "dark" ? "dark" : "light"
+    );
+  }, [appTheme]);
 
   return (
-    // <IntlProvider locale={locale} messages={messages}>
-    <div className={classNames(styles.app, { ["rtl"]: locale === "he" })}>
+    <div className={styles.app}>
       <Router>
         <Header />
         <Routes>
@@ -29,7 +31,6 @@ function App() {
       </Router>
       <Footer />
     </div>
-    // </IntlProvider>
   );
 }
 

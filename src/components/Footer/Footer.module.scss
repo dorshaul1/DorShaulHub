@@ -3,7 +3,7 @@
 .footer {
   width: 100%;
   min-height: 200px;
-  background-color: $clr-gray-light;
+  background-color: var(--clr-background-secondary);
 
   .wrapper {
     padding: $page-padding;

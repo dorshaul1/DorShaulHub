@@ -19,9 +19,21 @@
     --clr-positive: #58b84b;
     --clr-negative: #c95465;
 
-
-
     --clr-font: var(--clr-black);
-    --clr-background: var(--clr-white);
+    --clr-font-secondary: var(--clr-gray);
 
+    --clr-background: var(--clr-white);
+    --clr-background-secondary: var(--clr-gray-light);
+
+    
+}
+
+body[data-theme="dark"] {
+    --clr-background: #111113;
+    --clr-background-secondary: #18191B;
+
+    --clr-font: #ECEEF1;
+    --clr-font-secondary: #7b7b7b;
+
+    --clr-gray-light: var(--clr-gray-dark)
 }

@@ -28,6 +28,7 @@ export const components: any = {
           style={darcula}
           language={match[1]}
           PreTag="div"
+          customStyle={{ background: "#18191B" }}
           {...props}
         >
           {String(children).replace(/\n$/, "")}
