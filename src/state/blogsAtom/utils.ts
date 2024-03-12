@@ -23,6 +23,7 @@ const filterBlogs = (blogs: TBlog[], filters: TFilters): TBlog[] => {
 };
 
 const sortBlogs = (blogs: TBlog[], sortBy: string): TBlog[] => {
+  console.log("🚀 ~ sortBlogs ~ sortBy:", sortBy);
   if (sortBy === "date") {
     return blogs.sort((a, b) => {
       const dateA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
