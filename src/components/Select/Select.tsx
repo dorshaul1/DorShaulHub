@@ -43,7 +43,10 @@ const Select = ({ items, value, label, onChange }: TProps) => {
           </div>
           <div className={styles.content}>
             <RadixSelect.Trigger>
-              <Icon name="arrow" />
+              <Icon
+                className={classNames({ [styles.open]: isOpen })}
+                name="expend"
+              />
             </RadixSelect.Trigger>
             <RadixSelect.Content position="popper">
               <RadixSelect.Group className={styles.group}>

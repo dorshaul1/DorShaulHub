@@ -11,6 +11,11 @@
     }
     .content {
       z-index: 100;
+      transition: transform 0.3s ease;
+
+      .open {
+        rotate: 180deg;
+      }
 
       .group {
         background-color: var(--clr-background);
