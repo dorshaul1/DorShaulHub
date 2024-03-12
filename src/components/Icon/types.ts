@@ -1,5 +1,5 @@
 export type TIcon =
-  | "arrow"
+  | "expend"
   | "favorite"
   | "add"
   | "profile"
@@ -10,4 +10,5 @@ export type TIcon =
   | "mail"
   | "loading"
   | "sun"
-  | "moon";
+  | "moon"
+  | "arrowRight";

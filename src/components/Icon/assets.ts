@@ -1,4 +1,4 @@
-import arrow from "../../assets/icons/arrow.svg";
+import expend from "../../assets/icons/expend.svg";
 import favorite from "../../assets/icons/favorite.svg";
 import add from "../../assets/icons/add.svg";
 import profile from "../../assets/icons/profile.svg";
@@ -10,9 +10,10 @@ import mail from "../../assets/icons/mail.svg";
 import loading from "../../assets/icons/loading.svg";
 import moon from "../../assets/icons/moon.svg";
 import sun from "../../assets/icons/sun.svg";
+import arrowRight from "../../assets/icons/arrow-right.svg";
 
 export const icons: Record<string, string> = {
-  arrow,
+  expend,
   favorite,
   add,
   profile,
@@ -24,4 +25,5 @@ export const icons: Record<string, string> = {
   loading,
   moon,
   sun,
+  arrowRight,
 };

@@ -1,6 +1,5 @@
 import { icons } from "./assets";
 import { TIcon } from "./types";
-import { scssVariables } from "../../style/setup/variables";
 import classNames from "classnames";
 
 import styles from "./Icon.module.scss";
