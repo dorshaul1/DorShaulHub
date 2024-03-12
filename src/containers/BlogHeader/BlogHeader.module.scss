@@ -6,6 +6,14 @@
   min-height: 30vh;
   margin-bottom: 50px;
 
+  .previewImg {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+  }
   .title {
     font-size: 50px;
     font-weight: 500;

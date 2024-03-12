@@ -36,6 +36,7 @@ const Blog = () => {
         title={blog?.title}
         description={blog?.description}
         date={blog?.publishedAt}
+        previewImg={blog?.previewImg}
       />
       <BlogBody blogContent={blog?.content} />
     </section>

@@ -13,7 +13,7 @@ const Header = () => {
 
   const navLinks = [
     { path: "/blogs", name: "blogs" },
-    { path: "/about", name: "about me" },
+    // { path: "/about", name: "about me" },
   ];
 
   const [appTheme, setAppTheme] = useAtom(globalAtoms.appTheme);
