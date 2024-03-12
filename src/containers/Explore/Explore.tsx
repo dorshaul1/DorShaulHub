@@ -8,6 +8,7 @@ import BlogList from "../../components/BlogList";
 import Filters from "../../components/Filters";
 import { useFilter } from "../../components/Filters/useFilter";
 import Loading from "../../components/Loading";
+import LatestBlogs from "../../components/LatestBlogs";
 
 const Explore = () => {
   const [_, setBlogs] = useAtom(blogsAtoms.blogs);
@@ -35,12 +36,23 @@ const Explore = () => {
 
   return (
     <section className={styles.explore}>
-      <SearchBar
-        search={currentFilters?.search}
-        onSubmit={(value) => updateFilter("search", value)}
-      />
-      <Filters filters={currentFilters} />
-      {loading ? <Loading /> : <BlogList blogs={filteredBlogs} />}
+      <div className={styles.content}>
+        <SearchBar
+          search={currentFilters?.search}
+          onSubmit={(value) => updateFilter("search", value)}
+        />
+        <Filters filters={currentFilters} />
+        {loading ? (
+          <Loading />
+        ) : (
+          <>
+            <div className={styles.blogsSection}>
+              <BlogList blogs={filteredBlogs} />
+              <LatestBlogs />
+            </div>
+          </>
+        )}
+      </div>
     </section>
   );
 };

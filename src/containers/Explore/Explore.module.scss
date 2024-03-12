@@ -1,10 +1,23 @@
 @import "../../style/setup/setup.scss";
 
 .explore {
-  padding: $page-padding;
+  // padding: $page-padding;
   min-height: 80vh;
   padding-block: 30px;
 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .content {
+    width: $page-width;
+
+    .blogsSection {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 60px;
+    }
+  }
   @media screen and (max-width: $large-breakpoint) {
     padding: $page-padding-large;
     padding-block: 30px;
