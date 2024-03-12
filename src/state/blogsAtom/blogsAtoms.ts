@@ -20,4 +20,13 @@ const filteredBlogs = atom<TBlog[]>((get) => {
   return filteredBlogs;
 });
 
-export const blogsAtoms = { blogs, currentFilters, filteredBlogs };
+const latestBlogs = atom<TBlog[]>((get) => {
+  const NUMBER_OF_BLOGS = 3;
+
+  const all_blogs = get(blogs);
+  const sortedBlogs = sortBlogs(all_blogs, "date");
+
+  return sortedBlogs.slice(0, NUMBER_OF_BLOGS).reverse();
+});
+
+export const blogsAtoms = { blogs, currentFilters, filteredBlogs, latestBlogs };

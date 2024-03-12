@@ -6,10 +6,16 @@ type TProps = {
   title?: String;
   description?: string;
   date?: number;
+  previewImg?: string;
 };
-const BlogHeader = ({ title, description, date }: TProps) => {
+const BlogHeader = ({ title, description, date, previewImg }: TProps) => {
   return (
     <header className={styles.header}>
+      <div
+        className={styles.previewImg}
+        style={{ backgroundImage: `url(${previewImg})` }}
+      ></div>
+
       <h1 className={styles.title}>{title}</h1>
       <h3 className={styles.description}>{description}</h3>
 
