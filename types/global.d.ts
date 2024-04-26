@@ -1,16 +1,10 @@
+// Basic
 type TLanguages = "eu" | "he";
-
 type TAppTheme = "light" | "dark" | null;
 
+// Blog
 type TLabel = "react" | "node" | "css";
-
 type TSortBy = "name" | "date";
-
-type TFilters = {
-  search?: string;
-  labels?: TLabel[];
-  sortBy?: TSortBy;
-};
 
 type TBlog = {
   id: string;
@@ -21,4 +15,15 @@ type TBlog = {
   publishedAt?: number;
   isLike?: boolean;
   content?: string;
+};
+
+// Filter
+type TFilterOptions = "labels" | "sortBy" | "search";
+
+type TFilterValues = TLabel | TSortBy | string;
+
+type TFilters = {
+  search?: string;
+  labels?: TLabel[];
+  sortBy?: TSortBy;
 };

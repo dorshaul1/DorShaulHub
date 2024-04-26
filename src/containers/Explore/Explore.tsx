@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useAtom, useAtomValue } from "jotai";
 import { blogsAtoms } from "../../state/blogsAtom/blogsAtoms";
 import { getBlogs } from "../../services/blogsService";
@@ -39,7 +39,7 @@ const Explore = () => {
       <div className={styles.content}>
         <SearchBar
           search={currentFilters?.search}
-          onSubmit={(value) => updateFilter("search", value)}
+          onSubmit={(value) => updateFilter("search", value as TFilterValues)}
         />
         <Filters filters={currentFilters} />
         {loading ? (
