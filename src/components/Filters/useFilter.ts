@@ -3,82 +3,63 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { blogsAtoms } from "../../state/blogsAtom/blogsAtoms";
 import { useEffect } from "react";
 
-type TFilterOptions = "labels" | "sortBy" | "search";
-type TFilterValues = TLabel | TSortBy | string;
+const extractQueryParams = (queryParams: URLSearchParams): TFilters => ({
+  labels: queryParams.get("labels")
+    ? (queryParams.get("labels")!.split(",").filter(Boolean) as TLabel[])
+    : [],
+  sortBy: (queryParams.get("sortBy") as TSortBy) || "",
+  search: queryParams.get("search") || "",
+});
+
+const updateQueryParams = (
+  queryParams: URLSearchParams,
+  filter: TFilterOptions,
+  value: TFilterValues
+) => {
+  if (filter === "labels") {
+    const labels = queryParams.get("labels")?.split(",") || [];
+    const stringValue = value as string;
+
+    if (labels.includes(stringValue)) {
+      const updatedLabels = labels.filter((label) => label !== stringValue);
+      if (updatedLabels.length > 0) {
+        queryParams.set("labels", updatedLabels.join(","));
+      } else {
+        queryParams.delete("labels");
+      }
+    } else {
+      queryParams.set("labels", [...labels, stringValue].join(","));
+    }
+  } else {
+    const stringValue = value as string;
+    if (stringValue.trim() !== "") {
+      queryParams.set(filter, stringValue);
+    } else {
+      queryParams.delete(filter);
+    }
+  }
+};
 
 export const useFilter = () => {
-  const [currentFilters, setCurrentFilters] = useAtom(
-    blogsAtoms.currentFilters
-  );
+  const [_, setCurrentFilters] = useAtom(blogsAtoms.currentFilters);
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
+    const filters = extractQueryParams(queryParams);
 
-    const labelsParam = queryParams.get("labels") || "";
-    const sortByParam = queryParams.get("sortBy") || "";
-    const searchParam = queryParams.get("search") || "";
+    setCurrentFilters(filters);
+  }, [location.search]);
 
-    const labels = labelsParam.split(",");
-    const sortBy = sortByParam as TSortBy;
-    const search = searchParam;
+  const updateFilter = (filter: TFilterOptions, value: TFilterValues) => {
+    setCurrentFilters((prevFilters) => ({
+      ...prevFilters,
+      [filter]: value,
+    }));
 
-    setCurrentFilters({
-      labels: labels.filter(Boolean) as TLabel[],
-      sortBy,
-      search,
-    });
-  }, [location.search, setCurrentFilters]);
-
-  const updateFilter = (filter: TFilterOptions, value?: TFilterValues) => {
-    if (filter === "sortBy") {
-      setCurrentFilters({ ...currentFilters, sortBy: value as TSortBy });
-    } else if (filter === "labels") {
-      const labels = currentFilters.labels || [];
-      const updatedLabels = labels.includes(value as TLabel)
-        ? labels.filter((label) => label !== value)
-        : [...labels, value as TLabel];
-
-      setCurrentFilters({ ...currentFilters, labels: updatedLabels });
-    } else if (filter === "search") {
-      setCurrentFilters({ ...currentFilters, search: value as string });
-    }
-    updateURLParams(filter, value);
-  };
-
-  const updateURLParams = (filter: TFilterOptions, value?: TFilterValues) => {
     const queryParams = new URLSearchParams(location.search);
-
-    if (filter === "labels") {
-      const labelsParam = queryParams.get("labels") || "";
-      const existingLabels = labelsParam.split(",");
-
-      if (existingLabels.includes(value as string)) {
-        // Label is already selected, remove it from URL
-        const updatedLabels = existingLabels.filter((label) => label !== value);
-        if (updatedLabels.length > 0) {
-          queryParams.set("labels", updatedLabels.join(","));
-        } else {
-          queryParams.delete("labels");
-        }
-      } else {
-        // Label is not selected, add it to URL
-        const updatedLabels = existingLabels
-          .concat(value as string)
-          .filter(Boolean);
-        queryParams.set("labels", updatedLabels.join(","));
-      }
-    } else if (filter === "sortBy") {
-      queryParams.set("sortBy", value as string);
-    } else if (filter === "search") {
-      if (value && (value as string).trim() !== "") {
-        queryParams.set("search", value as string);
-      } else {
-        queryParams.delete("search");
-      }
-    }
-
+    updateQueryParams(queryParams, filter, value);
     navigate({ search: queryParams.toString() });
   };
 
