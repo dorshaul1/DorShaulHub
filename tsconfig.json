@@ -5,10 +5,6 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "typeRoots": ["./src", "./node_modules/@types"],
-    "suppressImplicitAnyIndexErrors": true,
-
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -22,7 +18,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src","types/global.d.ts", "types", "src/**/*", "types/global.d.ts", "types/**/*"],
-  "exclude": ["src/assets"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*", "types/**/*"], // Include all source code and types
+  "exclude": ["node_modules", "dist", "src/assets"], // Exclude unwanted directories
+  "references": [{ "path": "./tsconfig.node.json" }] // References to other configs
 }
