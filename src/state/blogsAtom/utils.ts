@@ -1,40 +1,41 @@
 const filterBlogs = (blogs: TBlog[], filters: TFilters): TBlog[] => {
-  const { search, labels } = filters;
+  const { search, labels = [] } = filters;
 
-  let filteredBlogs = blogs;
+  let result = blogs;
 
   if (search) {
-    const lowercaseSearch = search.toLowerCase();
-    filteredBlogs = filteredBlogs.filter(
-      (blog: TBlog) =>
-        (blog?.title?.toLowerCase() || "").includes(lowercaseSearch) ||
-        (blog?.description?.toLowerCase() || "").includes(lowercaseSearch)
+    const lowerSearch = search.toLowerCase();
+    result = result.filter(
+      (blog) =>
+        (blog.title || "").toLowerCase().includes(lowerSearch) ||
+        (blog.description || "").toLowerCase().includes(lowerSearch)
     );
   }
 
-  if (labels) {
-    const selectedLabels = Array.isArray(labels) ? labels : [labels];
-    filteredBlogs = filteredBlogs.filter((blog: TBlog) =>
-      blog?.labels?.some((label: TLabel) => selectedLabels.includes(label))
+  if (labels.length > 0) {
+    result = result.filter((blog) =>
+      blog.labels?.some((label) => labels.includes(label))
     );
   }
 
-  return filteredBlogs;
+  return result;
 };
 
 const sortBlogs = (blogs: TBlog[], sortBy: string): TBlog[] => {
-  console.log("🚀 ~ sortBlogs ~ sortBy:", sortBy);
-  if (sortBy === "date") {
-    return blogs.sort((a, b) => {
-      const dateA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
-      const dateB = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
-      return dateB - dateA;
-    });
-  } else if (sortBy === "name") {
-    return blogs.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
-  }
+  switch (sortBy) {
+    case "date":
+      return blogs.sort((a, b) => {
+        const timeA = a.publishedAt ? new Date(a.publishedAt).getTime() : 0;
+        const timeB = b.publishedAt ? new Date(b.publishedAt).getTime() : 0;
+        return timeB - timeA;
+      });
 
-  return blogs;
+    case "name":
+      return blogs.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+
+    default:
+      return blogs;
+  }
 };
 
 export { filterBlogs, sortBlogs };
