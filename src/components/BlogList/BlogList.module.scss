@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%;
 
   @media screen and (max-width: $narrow-breakpoint) {
     grid-template-columns: repeat(2, 1fr);
